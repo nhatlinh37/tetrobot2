@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="arg_x" default="0.00" />
+    <arg name="arg_y" default="0.00" />
+    <arg name="arg_z" default="0.00" />
+    <arg name="arg_R" default="0.00" />
+    <arg name="arg_P" default="0.00" />
+    <arg name="arg_Y" default="0.00" />
+    
+    <!-- Urdf file path -->
+    <param name="robot_description" 
+    textfile="$(find mobot_v2)/urdf/mobot_v2.urdf"/>
+
+    <!-- Spawn an empty gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+    
+    <!-- Spawn model -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-x $(arg arg_x) -y $(arg arg_y) -z $(arg arg_z) -Y $(arg arg_Y) -param robot_description -urdf -model mobot_v2 -J Rwheel-jt 0.0 -J Lwheel-jt 0.0 -J lidar-jt 0.0 -J Fwheel-jt 0.0 -J Bwheel-jt 0.0" />
+    
+    <!-- Load and launch the joint trajectory controller -->
+    <rosparam file ="$(find mobot_v2)/config/joint_names_mobot_v2.yaml" command="load"/>
+    
+    <!-- Start the controller manager -->
+    <node name="controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen"/>
+    
+    <!-- Robot State Publisher for TF of each joint -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" 
+    respawn="false" output="screen"/>
+
+   
+</launch>
+
+

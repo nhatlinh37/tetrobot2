@@ -1,0 +1,8 @@
+prefix=/home/linh/catkinws2/install
+
+Name: mobotv2
+Description: Description of mobotv2
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs roscpp rospy std_msgs

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mobot_v2">
+  
+   <link name="world"/>
+   <!-- /////////////////////////base link/////////////////////////-->
+  <link
+    name="Base_origin">
+    <inertial>
+      <origin
+        xyz="-0.11624 0.040271 -0.022163"
+        rpy="0 0 0" />
+      <mass
+        value="1.9026" />
+      <inertia
+        ixx="0.021008"
+        ixy="-1.8379E-11"
+        ixz="1.4612E-09"
+        iyy="0.0090992"
+        iyz="-2.7708E-08"
+        izz="0.029691" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Base_origin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Base_origin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Lwheel">
+    <inertial>
+      <origin
+        xyz="0.000824894843359 -0.000216415253456226 0.00581998639719201"
+        rpy="0 0 0" />
+      <mass
+        value="0.0419551495558746" />
+      <inertia
+        ixx="1.84062435462854E-05"
+        ixy="-8.35614213397228E-09"
+        ixz="-4.19043899727292E-10"
+        iyy="1.83755048516302E-05"
+        iyz="9.84368696584489E-11"
+        izz="3.09193291489182E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Lwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Lwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lwheel-jt"
+    type="continuous">
+    <origin
+      xyz="0.0605111083780135 0.0402696535569387 0.0519311440375263"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Base_origin" />
+    <child
+      link="Lwheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Rwheel">
+    <inertial>
+      <origin
+        xyz="-4.57546365438405E-05 -0.000851582983449159 -0.00581998639717496"
+        rpy="0 0 0" />
+      <mass
+        value="0.0419551495559179" />
+      <inertia
+        ixx="1.83735112724644E-05"
+        ixy="2.13792698510769E-09"
+        ixz="-3.41954935963936E-11"
+        iyy="1.84082371254683E-05"
+        iyz="-4.29090065698067E-10"
+        izz="3.09193291489226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Rwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Rwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Rwheel-jt"
+    type="continuous">
+    <origin
+      xyz="-0.292991104478199 0.0402696535569407 0.0519311440375265"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Base_origin" />
+    <child
+      link="Rwheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Fwheel">
+    <inertial>
+      <origin
+        xyz="0 0 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00352622390112194" />
+      <inertia
+        ixx="2.11465239614814E-07"
+        ixy="2.06217042208846E-23"
+        ixz="-1.04288087401274E-22"
+        iyy="2.11465239614814E-07"
+        iyz="-2.5614406397533E-24"
+        izz="3.32871831958792E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Fwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Fwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fwheel-jt"
+    type="fixed">
+    <origin
+      xyz="-0.118337283667785 0.310226503808691 0.0727311440375248"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Base_origin" />
+    <child
+      link="Fwheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Bwheel">
+    <inertial>
+      <origin
+        xyz="0 0 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00352622390112194" />
+      <inertia
+        ixx="2.11465239614814E-07"
+        ixy="-2.79466685801447E-23"
+        ixz="7.60585199653189E-23"
+        iyy="2.11465239614814E-07"
+        iyz="4.45968973134151E-23"
+        izz="3.32871831958793E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Bwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Bwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Bwheel-jt"
+    type="fixed">
+    <origin
+      xyz="-0.118337283667785 -0.209773496191309 0.072731144037525"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Base_origin" />
+    <child
+      link="Bwheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="0.00676628412110622 -0.0073497547966201 9.204265617406E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.32944589754502" />
+      <inertia
+        ixx="0.000612752010300123"
+        ixy="0.000158232462510536"
+        ixz="8.01141141656571E-07"
+        iyy="0.0010957461492681"
+        iyz="3.09663447837291E-06"
+        izz="0.000957691135206996" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar-jt"
+    type="continuous">
+    <origin
+      xyz="-0.116239998050096 0.0332696535569434 -0.107718855962475"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Base_origin" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  
+  <!-- Fixed joint connecting the world to the base link -->
+  <joint name="Base_origin_joint" type="fixed">
+    <parent link="world"/>
+    <child link="Base_origin"/>
+    <origin rpy="0 3.14159 0" xyz="0.0 0.0 0.17"/>
+  </joint>
+  
+   <!-- Add transmissions for existing joints -->
+  <transmission name="wheel_right_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Rwheel-jt">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_right_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel_left_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Lwheel-jt">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_left_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="front_caster_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Fwheel-jt">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_caster_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="back_caster_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Bwheel-jt">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_caster_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  
+  <transmission name="lidar_link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="lidar-jt">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="lidar">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  
+  <!-- Add Gazebo plugins and properties -->
+  <gazebo>
+    <plugin name="control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+  
+  <gazebo reference="Base_origin">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  
+  <gazebo reference="Rwheel">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  
+  <gazebo reference="Lwheel">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="Bwheel">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  
+  <gazebo reference="Fwheel">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="lidar">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  
+  
+</robot>
