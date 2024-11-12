@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Fwheel">
+
+  <xacro:macro name="Fwheel" params="name inertial_xyz joint_xyz">
+    <link name="Fwheel">
+    <inertial>
+      <origin
+        xyz="0 0 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00352622390112194" />
+      <inertia
+        ixx="2.11465239614814E-07"
+        ixy="2.06217042208846E-23"
+        ixz="-1.04288087401274E-22"
+        iyy="2.11465239614814E-07"
+        iyz="-2.5614406397533E-24"
+        izz="3.32871831958792E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Fwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobot_v2/meshes/Fwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  
+    <joint name="Fwheel-jt" type="fixed">
+    <origin
+      xyz="-0.118337283667785 0.310226503808691 0.0727311440375248"
+      rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="Base_origin" />
+    <child
+      link="Fwheel" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</xacro:macro>
+
+</robot>

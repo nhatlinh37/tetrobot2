@@ -68,11 +68,3 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mobot_v2/urdf" TYPE DIRECTORY FILES "/home/linh/catkinws2/src/mobot_v2/urdf/")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mobot_v2" TYPE PROGRAM FILES "/home/linh/catkinws2/build/mobot_v2/catkin_generated/installspace/lidar_publisher.py")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mobot_v2" TYPE PROGRAM FILES "/home/linh/catkinws2/build/mobot_v2/catkin_generated/installspace/pose_array_publisher.py")
-endif()
-

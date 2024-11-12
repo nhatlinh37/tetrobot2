@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Bwheel">
+
+  <xacro:macro name="Bwheel" params="name inertial_xyz joint_xyz">
+  <link name="Bwheel">
+    <inertial>
+      <origin xyz="0 0 1.38777878078145E-17" rpy="0 0 0" />
+      <mass value="0.00352622390112194" />
+      <inertia ixx="2.11465239614814E-07" ixy="-2.79466685801447E-23" ixz="7.60585199653189E-23" iyy="2.11465239614814E-07" 
+               iyz="4.45968973134151E-23" izz="3.32871831958793E-07" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mobot_v2/meshes/Bwheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://mobot_v2/meshes/Bwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="Bwheel-jt" type="fixed">
+    <origin xyz="-0.118337283667785 -0.209773496191309 0.072731144037525" rpy="-1.5707963267949 0 1.5707963267949" />
+    <parent link="Base_origin" />
+    <child link="Bwheel" />
+    <axis xyz="0 0 0" />
+  </joint>
+</xacro:macro>
+
+</robot>

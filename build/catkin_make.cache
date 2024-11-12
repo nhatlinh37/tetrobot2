@@ -1,2 +1,2 @@
-mobot_v2
+agv_gazebo:agv_navigation:mobot_v2
 -DCATKIN_DEVEL_PREFIX=/home/linh/catkinws2/devel -DCMAKE_INSTALL_PREFIX=/home/linh/catkinws2/install -G Unix Makefiles

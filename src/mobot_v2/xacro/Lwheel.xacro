@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Lwheel">
+
+    <xacro:macro name="Lwheel" params="name inertial_xyz joint_xyz">
+    <link name="Lwheel">
+        <inertial>
+            <origin xyz="0.000824894843359 -0.000216415253456226 0.00581998639719201" rpy="0 0 0"/>
+            <mass value="0.0419551495558746"/>
+            <inertia ixx="1.84062435462854E-05" ixy="-8.35614213397228E-09" ixz="-4.19043899727292E-10"
+                     iyy="1.83755048516302E-05" iyz="9.84368696584489E-11" izz="3.09193291489182E-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mobot_v2/meshes/Lwheel.STL"/>
+            </geometry>
+             <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      	     </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://mobot_v2/meshes/Lwheel.STL"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="Lwheel-jt" type="continuous">
+        <origin xyz="0.0605111083780135 0.0402696535569387 0.0519311440375263" rpy="-1.5707963267949 0 1.5707963267949"/>
+        <parent link="Base_origin"/>
+        <child link="Lwheel"/>
+        <axis xyz="0 0 -1"/>
+    </joint>
+</xacro:macro>
+
+</robot>

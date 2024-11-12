@@ -28,9 +28,3 @@ foreach(dir config launch meshes urdf)
 		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
 
-# Install Python scripts
-catkin_install_python(PROGRAMS
-  lidar_publisher.py
-  pose_array_publisher.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)

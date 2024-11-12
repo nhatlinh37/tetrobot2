@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Argument for GUI, defaulting to True -->
+    <arg name="gui" default="True" />
+
+    <!-- Argument to specify the robot model name, defaulting to mobot_v2 -->
+    <arg name="model" default="$(find mobot_v2)/xacro/mobot_v2.urdf.xacro" />
+
+    <!-- Load the robot_description by processing the Xacro file -->
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+
+    <!-- Start the joint_state_publisher_gui for visualizing joint states -->
+    <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+
+    <!-- Send joint values -->
+    <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+    <!-- Start the robot_state_publisher to broadcast the TF -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- Start RViz with a configuration file specific to the model -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mobot_v2)/urdf.rviz" />
+</launch>

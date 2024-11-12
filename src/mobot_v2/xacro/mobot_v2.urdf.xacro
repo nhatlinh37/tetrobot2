@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mobot_v2">
+
+    <xacro:include filename="$(find mobot_v2)/xacro/mobot_v2.gazebo.xml"/>
+    
+    <link name="world"/>
+
+    <!-- base_link -->
+    <link name="Base_origin">
+        <inertial>
+            <origin xyz="-0.11624 0.040271 -0.022163" rpy="0 0 0" />
+            <mass value="1.9026" />
+            <inertia ixx="0.021008" ixy="-1.8379E-11" ixz="1.4612E-09"
+                     iyy="0.0090992" iyz="-2.7708E-08" izz="0.029691"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobot_v2/meshes/Base_origin.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobot_v2/meshes/Base_origin.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+   <!-- Fixed joint connecting the world to the base link -->
+  <joint name="Base_origin_joint" type="fixed">
+    <parent link="world"/>
+    <child link="Base_origin"/>
+    <origin rpy="0 3.14159 0" xyz="0.0 0.0 0.17"/>
+  </joint>
+
+    <!-- Include wheel and joint macros -->
+    <xacro:include filename="$(find mobot_v2)/xacro/Lwheel.xacro"/>
+    <xacro:include filename="$(find mobot_v2)/xacro/Rwheel.xacro"/>
+    <xacro:include filename="$(find mobot_v2)/xacro/Fwheel.xacro"/>
+    <xacro:include filename="$(find mobot_v2)/xacro/Bwheel.xacro"/>
+
+    <!-- Create Left and Right Wheels -->
+    <xacro:Lwheel name="left" inertial_xyz="0.000824894843359 -0.000216415253456226 0.00581998639719201" joint_xyz="0.0605111083780135 0.0402696535569387 0.0519311440375263" />
+    <xacro:Rwheel name="right" inertial_xyz="-4.57546365438405E-05 -0.000851582983449159 -0.00581998639717496" joint_xyz="-0.292991104478199 0.0402696535569407 0.0519311440375265" />
+
+    <!-- Create Front and Back Wheels -->
+    <xacro:Fwheel name="front" inertial_xyz="0 0 1.38777878078145E-17" joint_xyz="-0.118337283667785 0.310226503808691 0.0727311440375248" />
+    <xacro:Bwheel name="back" inertial_xyz="0 0 1.38777878078145E-17" 
+    joint_xyz="-0.118337283667785 -0.209773496191309 0.072731144037525" />
+
+    <!-- Include Lidar and joint macros -->
+    <xacro:include filename="$(find mobot_v2)/xacro/lidar.xacro"/>
+
+    <!-- Create Lidar Sensors -->
+    <xacro:Lidar name="frontlidar" inertial_xyz="0.00676628412110622 -0.0073497547966201 9.204265617406E-05" joint_xyz="-0.116239998050096 0.0332696535569434 -0.107718855962475" />
+   
+
+</robot>

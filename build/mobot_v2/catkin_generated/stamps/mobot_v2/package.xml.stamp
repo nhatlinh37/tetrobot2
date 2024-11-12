@@ -29,7 +29,7 @@ for mobot_v2 robot</p>
   
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo</depend>
-<depend>moveit_simple_controller_manager</depend>
+  <depend>moveit_simple_controller_manager</depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>

@@ -1,33 +1,11 @@
 <launch>
-  <arg
-    name="model" />
-  <param
-    name="robot_description"
-    textfile="$(find mobot_v2)/urdf/mobot_v2.urdf" />
-  <node
-    name="joint_state_publisher_gui"
-    pkg="joint_state_publisher_gui"
-    type="joint_state_publisher_gui" />
-  <node
-    name="robot_state_publisher"
-    pkg="robot_state_publisher"
-    type="robot_state_publisher" />
-  <node
-    name="rviz"
-    pkg="rviz"
-    type="rviz"
-    args="-d $(find mobot_v2)/urdf.rviz" />
+  <arg name="gui" default="True" />
+  <arg name="model" />
+  <param name="robot_description" textfile="$(find mobot_v2)/urdf/mobot_v2.urdf" />
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mobot_v2)/urdf.rviz" />
 
-  <node
-    name="lidar_publisher"
-    pkg="mobot_v2"
-    type="lidar_publisher.py"
-    output="screen" />
-
-  <node
-    name="pose_array_publisher"
-    pkg="mobot_v2"
-    type="pose_array_publisher.py"
-    output="screen" />
+  
 
 </launch>
